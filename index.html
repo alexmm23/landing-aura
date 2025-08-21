@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura – Plataforma Académica Inteligente</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    @keyframes fadeIn {
+      0%   { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 1.5s ease-out both;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #9C27B0; 
+      color: #000;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .section-bg {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+
+    
+    .lava-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -10;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      width: 1200px;
+      height: 1000px;
+      background: radial-gradient(circle at center, #FFB347, #FFA726, #BA68C8, #9C27B0);
+      opacity: 180;
+      filter: blur(50px);
+      mix-blend-mode: screen;
+      animation: moveBlobs 5s infinite ease-in-out alternate;
+      border-radius: 50%;
+    }
+
+    .blob:nth-child(2) {
+      left: 60%;
+      top: 10%;
+      animation-delay: 1s;
+    }
+
+    .blob:nth-child(3) {
+      left: 20%;
+      top: 50%;
+      animation-delay: 2s;
+    }
+
+    .blob:nth-child(4) {
+      left: 60%;
+      top: 10%;
+      animation-delay: 2s;
+    }
+
+    @keyframes moveBlobs {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+      50% {
+        transform: translate(-200px, 100px) scale(1.2);
+      }
+      100% {
+        transform: translate(100px, -150px) scale(1);
+      }
+    }
+
+    .hero-section {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      text-align: center;
+    }
+
+    .hero-section h1,
+    .hero-section p {
+      color: white;
+    }
+  </style>
+</head>
+<body class="text-black">
+
+  
+  <div class="lava-bg">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+
+
+  <section class="hero-section">
+    <div class="relative z-10">
+        <img src="logoaura.png" alt="Logo Aura" class="mx-auto w-48 md:w-64 mb-4 fade-in">
+        <p class="text-xl md:text-2xl max-w-xl mx-auto">Unifica tus clases, toma apuntes y genera resúmenes inteligentes con IA</p>
+    </div>
+  </section>
+
+
+ 
+  <section id="sobre" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto section-bg text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-6">¿Qué es Aura?</h2>
+      <p class="text-lg mb-10">Aura es una app multiplataforma que centraliza tus plataformas educativas favoritas como Moodle, Classroom y Teams, y potencia tu aprendizaje con IA.</p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 shadow-lg rounded-lg bg-white bg-opacity-90 text-black" data-aos="zoom-in">
+          <h3 class="font-bold text-xl mb-2">Integración total</h3>
+          <p>Accede a todas tus clases desde una sola app.</p>
+        </div>
+        <div class="p-6 shadow-lg rounded-lg bg-white bg-opacity-90 text-black" data-aos="zoom-in" data-aos-delay="100">
+          <h3 class="font-bold text-xl mb-2">Cuadernos digitales</h3>
+          <p>Toma apuntes con herramientas intuitivas y modernas.</p>
+        </div>
+        <div class="p-6 shadow-lg rounded-lg bg-white bg-opacity-90 text-black" data-aos="zoom-in" data-aos-delay="200">
+          <h3 class="font-bold text-xl mb-2">Resumen inteligente</h3>
+          <p>La IA resume tus notas mediante una CRNN especializada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto section-bg text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-10">¿Cómo funciona?</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-left">
+        <div data-aos="fade-right">
+          <h4 class="font-bold mb-2">1. Conecta tus cuentas</h4>
+          <p>Inicia sesión con Moodle, Classroom y Teams.</p>
+        </div>
+        <div data-aos="fade-up">
+          <h4 class="font-bold mb-2">2. Toma apuntes</h4>
+          <p>Usa el editor digital para capturar tus ideas.</p>
+        </div>
+        <div data-aos="fade-left">
+          <h4 class="font-bold mb-2">3. Genera resúmenes</h4>
+          <p>La IA procesa tus notas y te ofrece resúmenes útiles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer class="py-10" style="background: linear-gradient(to right, #FFB347, #FFA726, #BA68C8, #9C27B0); color: black;">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h3 class="text-2xl font-bold mb-4">Conecta con nosotros</h3>
+      <div class="flex justify-center space-x-6 mb-6">
+        <a href="https://twitter.com" target="_blank"><img src="https://img.icons8.com/ios-filled/30/000000/twitter.png" /></a>
+        <a href="https://instagram.com" target="_blank"><img src="https://img.icons8.com/ios-filled/30/000000/instagram-new.png" /></a>
+        <a href="https://linkedin.com" target="_blank"><img src="https://img.icons8.com/ios-filled/30/000000/linkedin.png" /></a>
+        <a href="mailto:contacto@auraapp.com"><img src="https://img.icons8.com/ios-filled/30/000000/new-post.png" /></a>
+      </div>
+      <p class="text-sm">&copy; 2025 Aura. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1000 });</script>
+</body>
+</html>
